@@ -6,11 +6,14 @@ using UnityEngine.Events;
 
 public class Bullet_Setting : MonoBehaviour
 {
-    [SerializeField] public bool Destroy_When_Hit;
     public float speed = 70f;
+    [SerializeField] public bool Destroy_When_Hit;
     
     private Transform target;
     private Vector3 FirstPosition;
+    
+    [Header("Event")]
+    [SerializeField] protected UnityEvent m_Bullet_V1_WhenHitEnemy = new();
 
     void Start()
     {
@@ -43,7 +46,8 @@ public class Bullet_Setting : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Bullet HIT Enemy");
+            m_Bullet_V1_WhenHitEnemy.Invoke();
+            
             if(Destroy_When_Hit == true)
                 Destroy(this.gameObject);
         }

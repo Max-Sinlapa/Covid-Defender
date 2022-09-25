@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TurretLaunchPosition: {fileID: 9191102317774238256}
   PartToRotate: {fileID: 9191102319695786661}
-  m_MissilePrefab: {fileID: 1464337884896821032, guid: 771f7c689997ddf499ae16660b0e41f7, type: 3}
+  m_MissilePrefab: {fileID: 1464337884896821032, guid: 7b236bde44b1c9843a8a04322a992d6a, type: 3}
   m_AmmoSpeed: 20
   m_CoolDownToLuanch: 1
   m_CurrentCoolDown: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 9191102319007800675}
   - component: {fileID: 9191102319007800676}
   m_Layer: 0
-  m_Name: Tower_V-1
+  m_Name: Tower_V-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9191102319007800677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.88, y: 0.974, z: 6.538}
+  m_LocalPosition: {x: -687.9999, y: 330.83337, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -262,7 +262,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 284086bb4e80f5c43b2636348283be58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

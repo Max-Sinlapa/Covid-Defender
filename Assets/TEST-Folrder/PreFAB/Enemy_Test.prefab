@@ -110,7 +110,8 @@ GameObject:
   - component: {fileID: 6730803597077737042}
   - component: {fileID: 6730803597077737043}
   - component: {fileID: 6730803597077737055}
-  - component: {fileID: 8570160015453354718}
+  - component: {fileID: -1393589678611160600}
+  - component: {fileID: -7602842615064123327}
   m_Layer: 0
   m_Name: Enemy_Test
   m_TagString: Enemy
@@ -210,11 +211,11 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8570160015453354718
+--- !u!114 &-1393589678611160600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,4 +227,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031a0dcfc3ae55d43911b309661f6ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  HealthPoint: 100
+  speed: 2.5
+  Slow_persentage: 0.5
+  onDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7602842615064123327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730803597077737041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70429fae1ac347e48a3021ee3116de79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimerDuration: 2
+  m_TimerStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1393589678611160600}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: EnemyGetSlow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_TimerEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1393589678611160600}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: EnemyGetDefaulSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _CurrentTime: 0

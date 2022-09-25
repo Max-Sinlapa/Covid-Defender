@@ -17,15 +17,18 @@ public class TurretImpulseLaunchar : MonoBehaviour
     [SerializeField] public float m_CoolDownToLuanch ;
     [SerializeField] protected float m_CurrentCoolDown = 0;
     
+    /*
     [Header("LineRender SetUp")]
     [SerializeField] protected bool m_IsDrawGizmos = true;
     [SerializeField] protected float m_LineSize = 0.2f;
     [SerializeField] protected Material m_LineMaterial;
     [SerializeField] protected LineRenderer m_LineRenderer;
+    */
 
     private Transform target;
     void Start()
     {
+        /*
         m_LineRenderer = gameObject.AddComponent<LineRenderer>();
         if (m_LineMaterial != null)
             m_LineRenderer.material = m_LineMaterial;
@@ -33,6 +36,7 @@ public class TurretImpulseLaunchar : MonoBehaviour
         m_LineRenderer.startWidth = m_LineSize;
         m_LineRenderer.endWidth = 0;
         m_LineRenderer.enabled = false;
+        */
         
     }
 
@@ -44,13 +48,11 @@ public class TurretImpulseLaunchar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //m_LineRenderer.enabled = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
         
-        if (other.CompareTag("Enemy"))
-        {
-            m_LineRenderer.enabled = true;
-            
-        }
-
     }
     
     private void OnTriggerStay(Collider other)
@@ -60,17 +62,15 @@ public class TurretImpulseLaunchar : MonoBehaviour
         {
             target = other.transform;
             //Laser aiming at player
-            m_LineRenderer.SetPosition(0,m_TurretLaunchPosition.position);
-            m_LineRenderer.SetPosition(1,other.transform.position);
-                
+            //m_LineRenderer.SetPosition(0,m_TurretLaunchPosition.position);
+            //m_LineRenderer.SetPosition(1,other.transform.position);
+            
+            RatateGun(other);
             if (m_CurrentCoolDown <= 0 )
             {
                 m_CurrentCoolDown = m_CoolDownToLuanch;
                 LaunchBall(other.transform.position);
             }
-
-            RatateGun(other);
-
         }
         
     }
@@ -82,12 +82,6 @@ public class TurretImpulseLaunchar : MonoBehaviour
         Vector3 rotation = lookRotation.eulerAngles;
         PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
  
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-            m_LineRenderer.enabled = false;
     }
 
     private void LaunchBall(Vector3 targetPosition)
@@ -124,9 +118,10 @@ public class TurretImpulseLaunchar : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        /*
         if(!m_IsDrawGizmos) 
             return;
-            
+        */  
         Gizmos.color = Color.yellow;
             
         if(m_TurretLaunchPosition is not null)
