@@ -11,6 +11,6 @@ public class PrefabSpawner : ScriptableObject
     {
         var go = Instantiate(m_Prefab);
         go.transform.position = parent.transform.position;
-        Debug.Log("SpawnPrefab");
+        
     }
 }

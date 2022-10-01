@@ -3,17 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Bullet_Setting : MonoBehaviour
 {
     public float speed = 70f;
     [SerializeField] public bool Destroy_When_Hit;
+    public int Damage;
     
     private Transform target;
     private Vector3 FirstPosition;
     
-    [Header("Event")]
-    [SerializeField] protected UnityEvent m_Bullet_V1_WhenHitEnemy = new();
+    //[Header("Event")]
+    //[SerializeField] protected UnityEvent m_Bullet_WhenHitEnemy = new();
 
     void Start()
     {
@@ -41,17 +43,35 @@ public class Bullet_Setting : MonoBehaviour
         target = _target;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
 
         if (other.CompareTag("Enemy"))
         {
-            m_Bullet_V1_WhenHitEnemy.Invoke();
+            if (this.gameObject.CompareTag("Bullet-V1"))
+                DamageToEnemy(other);
+            if (this.gameObject.CompareTag("Bullet-V2"))
+            {
+                DamageToEnemy(other);
+                SlowEnemy(other);
+            }
+                
             
             if(Destroy_When_Hit == true)
                 Destroy(this.gameObject);
         }
     }
 
-   
+    public void DamageToEnemy(Collider other)
+    {
+        var Enemy = other.GetComponent<Enemy>();
+        Enemy.RecievDamage(Damage);
+    }
+
+    public void SlowEnemy(Collider other)
+    {
+        var Enemy = other.GetComponent<Timer_V2>();
+        Enemy.StartTimer();
+    }
+
 }

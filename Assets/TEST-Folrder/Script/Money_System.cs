@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using TMPro;
 public class Money_System : MonoBehaviour
 {
     public int m_StartMoney;
-    
+
     [SerializeField] public TextMeshProUGUI moneyCountText;
     void Start()
     {
@@ -16,7 +17,7 @@ public class Money_System : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyCountText.text = Mathf.Floor(m_StartMoney).ToString();
+        moneyCountText.text = "$ : " + Mathf.Floor(m_StartMoney);
     }
 
     public void AddMoney(int Amount_Earn_Money)

@@ -46,7 +46,7 @@ public class Selected_Mode : MonoBehaviour
         if (Current_Selected != null)
         {
             Instantiate(Current_Selected, buildPOS , transform.rotation);
-            Debug.Log("BuilTower-1");
+            
         }
     }
 
@@ -59,13 +59,13 @@ public class Selected_Mode : MonoBehaviour
     public void SelectedTower_1(GameObject turrent)
     {
         Current_Selected = Instantiate(turrent);
-        Debug.Log("selecTower-1");
+        
     }
     
     public void SelectedTower_2(GameObject turrent)
     {
         Current_Selected = Instantiate(turrent);
-        Debug.Log("selecTower-2");
+        
     }
 
 

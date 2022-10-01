@@ -128,15 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429dea46d7d59b34ba938ccabb101716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 40
   speed: 20
   Destroy_When_Hit: 1
-  m_Bullet_V1_WhenHitEnemy:
+  Damage: 40
+  m_Bullet_WhenHitEnemy:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1393589678611160600, guid: 4858261160878fa4b81a7f5de634d47d, type: 3}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: DamageToEnemy
+        m_MethodName: RecievDamage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
