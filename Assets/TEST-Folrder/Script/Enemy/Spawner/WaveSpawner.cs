@@ -5,19 +5,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class WaveSpawner : MonoBehaviour
 {
     public Transform spawnPoint;
-
-    public Wave[] waves;
+    public List<Wave_Object> waves;
     
-    public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
+    private int time_Spawn_Enemy;
+    private int countdown = 2;
     public TextMeshProUGUI waveCountdownText;
-    
     
     [Header("Event")]
     [SerializeField] protected UnityEvent m_Spawn = new();
@@ -25,105 +24,93 @@ public class WaveSpawner : MonoBehaviour
     private int waveIndex = -1;
     private int AllEnemyInWave = 0;
     private int EnemyAlradySpawnInWave = 0;
-    private int EnemySlectedToRespawn;
+    private int timeTick;
 
     /// <Count Enemy In Wave>
-    private int EnemyType_1_Count;
-    private int EnemyType_2_Count;
-    private int EnemyType_3_Count;
+    public List<int> EnemyType_Count;
+
     /// </Count Enemy In Wave>
-    void Update()
+    private void Start()
     {
         
-        if (countdown <= 0f)
-        {
-            SpawnWave(waveIndex);
-            countdown = timeBetweenWaves;
-        }
-        
-        if (Input.GetMouseButtonDown(1))
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(2))
         {
             waveIndex++;
             StartWave(waveIndex);
-            EnemyAlradySpawnInWave = 0;
-            Debug.Log("waveIndex = " + waveIndex);
         }
-        countdown -= Time.deltaTime;
+        ////-----------------------------------------------------------------------
+
+
+        ///Timer
+        timeTick++;
+        if (timeTick % 550 == 0)
+        {
+            countdown += 1;
+            SpawnWave(waveIndex);
+        }
         waveCountdownText.text = Mathf.Floor(countdown).ToString();
     }
 
     void StartWave(int CurrentWave)
     {
-        Wave wave = waves[CurrentWave];
-        
+        countdown = 0;
         /////Check EnemyGameObject
-        for (int a = 0; a < wave.enemy.Length; a++)
+        for (int a = 0; a < waves[CurrentWave].m_Enemy.Length; a++)
         {
-            if (wave.enemy[a] == null)
+            if (waves[CurrentWave].m_Enemy[a] == null)
             {
                 Debug.Log("Need To Fill 'Enemy GameObject' In All Element WAVE");
                 return;
             }
+            //Debug.Log("EnemyType_Count = " + EnemyType_Count[a]);
+            //EnemyType_Count[a] = waves[CurrentWave].m_Enemy[a].count; //////Collec_EnemyCount_FormObject
+            AllEnemyInWave += waves[CurrentWave].m_Enemy[a].count;
+            
+            
         }
-
-        /////Check EnemyCount
-        for (int b = 0; b < wave.count.Length; b++)
-        {
-            if (wave.count[b] == null)
-            {
-                Debug.Log("Need To Fill 'Count' In All Element WAVE");
-                return;
-            }
-            AllEnemyInWave += wave.count[b];
-        }
-        
-        /////Check EnemySpawnRate
-        for (int b = 0; b < wave.SpawnRate.Length; b++)
-        {
-            if (wave.SpawnRate[b] == null)
-            {
-                Debug.Log("Need To Fill 'SpawnRate' In All Element WAVE");
-                return;
-            }
-        }
-        
+        Debug.Log("waveIndex = " + waveIndex);
+        Debug.Log("CurrentWave" + CurrentWave);
         Debug.Log("AllEnemyInWave = " + AllEnemyInWave);
+        EnemyAlradySpawnInWave = 0;
     }
 
     void SpawnWave(int CurrentWave)
     {
 
-        if (EnemyAlradySpawnInWave == AllEnemyInWave)
+        if (EnemyAlradySpawnInWave >= AllEnemyInWave)
         {
-            Debug.Log("Done "+ EnemyAlradySpawnInWave);
+            Debug.Log("Wave Done "+ EnemyAlradySpawnInWave);
             return;
         }
         else
         {
-            
-            do
+            for (int s = 0; s < waves[CurrentWave].m_Enemy.Length; s++)
             {
-                int randomEnemy = Random.Range(0,waves[CurrentWave].enemy.Length);
-                EnemySlectedToRespawn = randomEnemy;
-            } while (waves[CurrentWave].count[EnemySlectedToRespawn] > 0);
-            
-            
-            SpawnEnemy(CurrentWave,EnemySlectedToRespawn);
-
+                time_Spawn_Enemy = waves[CurrentWave].m_Enemy[s].SpawnRate;////////////GetEnemySpawnRate
+                if (countdown % time_Spawn_Enemy == 0)
+                {
+                    SpawnEnemy(CurrentWave,s);
+                    //EnemyType_Count[s] -= 1;
+                }
+                    
+            }
         }
     }
     
     
     public void SpawnEnemy(int CurrentWave, int EnemyType)
     {
-        GameObject enemyPreFab = waves[CurrentWave].enemy[EnemyType];
-        Instantiate(enemyPreFab, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemy_PreFab = waves[CurrentWave].m_Enemy[EnemyType].enemy;
+        
+        Instantiate(enemy_PreFab, spawnPoint.position, spawnPoint.rotation);
         m_Spawn.Invoke();
         
-        waves[CurrentWave].count[EnemyType] -= 1;
-        timeBetweenWaves = waves[CurrentWave].SpawnRate[EnemyType];
         EnemyAlradySpawnInWave++;
-        Debug.Log( "EnemyType = " + waves[CurrentWave].enemy[EnemyType]+" /// EnemyCount = " + waves[CurrentWave].count[EnemyType]);
+        Debug.Log( "EnemyType = " + enemy_PreFab + " /// EnemyCount = " + waves[CurrentWave].m_Enemy[EnemyType].count);
         Debug.Log("EnemyAlradySpawnInWave = "+ EnemyAlradySpawnInWave);
     }
     

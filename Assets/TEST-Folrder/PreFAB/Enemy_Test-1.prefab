@@ -232,34 +232,9 @@ MonoBehaviour:
   speed: 3
   Current_Speed: 0
   Slow_persentage: 0.5
-  DefaultSpeed: 0
-  onDestroyEvent:
+  GetKillByTower_Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7091147316607648291, guid: 4405f5aa425dd37469bbc6d3ad2fe54d, type: 3}
-        m_TargetAssemblyTypeName: Money_System, Assembly-CSharp
-        m_MethodName: AddMoney
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7091147316607648295, guid: 4405f5aa425dd37469bbc6d3ad2fe54d, type: 3}
-        m_TargetAssemblyTypeName: WaveSpawner, Assembly-CSharp
-        m_MethodName: EnemySpawner
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-7602842615064123327
 MonoBehaviour:
   m_ObjectHideFlags: 0

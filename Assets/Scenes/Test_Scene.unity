@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019506317}
+      - m_Target: {fileID: 7091147315017303409}
         m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
         m_MethodName: SelectedTower_2
         m_Mode: 2
@@ -2110,127 +2110,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9370dac04bb86743b3c331b8dfb7ce6, type: 3}
---- !u!1 &1019506313
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1019506315}
-  - component: {fileID: 1019506314}
-  - component: {fileID: 1019506317}
-  - component: {fileID: 1019506318}
-  m_Layer: 0
-  m_Name: GameMaster[Manager]
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1019506314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019506313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4a938f061c0ea4e8f70780d9e8c8ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6730803597077737041, guid: 4858261160878fa4b81a7f5de634d47d, type: 3}
-  spawnPoint: {fileID: 2104510109}
-  timeBetweenWaves: 3
-  waveCountdownText: {fileID: 718902269}
-  m_Spawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 20371b6959abb56438328087a357d344, type: 2}
-        m_TargetAssemblyTypeName: PrefabSpawner, Assembly-CSharp
-        m_MethodName: SpawnPrefab
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2104510108}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!4 &1019506315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019506313}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.420849, y: -1.3028396, z: -13.399358}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1019506317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019506313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c49f89434a390439c17972da0574ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Left_Mouse_Click:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1019506317}
-        m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_Right_Mouse_Click:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1019506317}
-        m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
-        m_MethodName: CancelBuild
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1019506318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019506313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7d11adf9711334a8035b678203e195, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartMoney: 0
-  moneyCountText: {fileID: 1555340315}
 --- !u!4 &1034586654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6682753705631526529, guid: b9370dac04bb86743b3c331b8dfb7ce6, type: 3}
@@ -4582,7 +4461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019506317}
+      - m_Target: {fileID: 7091147315017303409}
         m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
         m_MethodName: SelectedTower_1
         m_Mode: 2
@@ -4689,3 +4568,120 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9370dac04bb86743b3c331b8dfb7ce6, type: 3}
+--- !u!114 &7091147315017303409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091147315017303413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c49f89434a390439c17972da0574ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: {fileID: 7091147315017303410}
+  Tower_1_Prize: 100
+  Tower_2_Prize: 250
+  Tower_3_Prize: 400
+  m_Left_Mouse_Click:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7091147315017303409}
+        m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
+        m_MethodName: BuildTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_Right_Mouse_Click:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7091147315017303409}
+        m_TargetAssemblyTypeName: Selected_Mode, Assembly-CSharp
+        m_MethodName: CancelBuild
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_Can_Not_Buy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7091147315017303410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091147315017303413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7d11adf9711334a8035b678203e195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CurrentMoney: 400
+  moneyCountText: {fileID: 1555340315}
+--- !u!1 &7091147315017303413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7091147315017303415}
+  - component: {fileID: 7091147315017303414}
+  - component: {fileID: 7091147315017303409}
+  - component: {fileID: 7091147315017303410}
+  m_Layer: 0
+  m_Name: GameMaster[Manager]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7091147315017303414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091147315017303413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4a938f061c0ea4e8f70780d9e8c8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 2104510109}
+  waves:
+  - {fileID: 11400000, guid: fbd58fe8c326f2c4da0c732c223b6d22, type: 2}
+  waveCountdownText: {fileID: 718902269}
+  m_Spawn:
+    m_PersistentCalls:
+      m_Calls: []
+  EnemyType_Count: 
+--- !u!4 &7091147315017303415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091147315017303413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.420849, y: -1.3028396, z: -13.399358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

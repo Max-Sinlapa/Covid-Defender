@@ -206,9 +206,10 @@ GameObject:
   - component: {fileID: 9191102319007800674}
   - component: {fileID: 9191102319007800675}
   - component: {fileID: 9191102319007800676}
+  - component: {fileID: -3875957966949043842}
   m_Layer: 0
   m_Name: Tower_V-1
-  m_TagString: Untagged
+  m_TagString: Tower_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,6 +294,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3875957966949043842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191102319007800677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70429fae1ac347e48a3021ee3116de79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimerDuration: 0.5
+  m_TimerStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9191102319007800675}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 9fe0bb6f645fbec478681c8eb402b2b1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_TimerEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9191102319007800675}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _CurrentTime: 0
 --- !u!1 &9191102319695786662
 GameObject:
   m_ObjectHideFlags: 0

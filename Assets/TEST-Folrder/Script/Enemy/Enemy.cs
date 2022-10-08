@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
     public float Current_Speed;
     public float Slow_persentage = 0.5f;
-    public float DefaultSpeed;
+    private float DefaultSpeed;
     
     //Enemy-WayPoint
     private Transform targetPoint;
