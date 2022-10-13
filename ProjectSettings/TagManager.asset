@@ -10,6 +10,8 @@ TagManager:
   - Tower_1
   - Tower_2
   - Tower_3
+  - Bullet-V3
+  - MainBase
   layers:
   - Default
   - TransparentFX
