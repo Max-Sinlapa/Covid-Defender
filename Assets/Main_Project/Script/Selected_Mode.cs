@@ -76,41 +76,24 @@ public class Selected_Mode : MonoBehaviour
 
             ///////////////// Buy_Tower
             if (Current_Selected.CompareTag("Tower_1"))
+            {
                 money.DecreaseMoney(Tower_1_Prize);
+                CancelBuild();
+            }
+
             if (Current_Selected.CompareTag("Tower_2"))
+            {
                 money.DecreaseMoney(Tower_2_Prize);
+                CancelBuild();
+            }
+
             if (Current_Selected.CompareTag("Tower_3"))
+            {
                 money.DecreaseMoney(Tower_3_Prize);
+                CancelBuild();
+            }
             ///////////////// Buy_Tower
         }
-    }
-
-    void CheckMoneyToBuyTower()
-    {
-
-        if (Current_Selected.CompareTag("Tower_1"))
-            if (money.m_CurrentMoney < Tower_1_Prize)
-            {
-                Debug.Log("Not Enough Money");
-                
-                return;
-            }
-            
-        if (Current_Selected.CompareTag("Tower_2"))
-            if (money.m_CurrentMoney < Tower_2_Prize)
-            {
-                Debug.Log("Not Enough Money");
-                
-                return;
-            }
-            
-        if (Current_Selected.CompareTag("Tower_3"))
-            if (money.m_CurrentMoney < Tower_2_Prize)
-            {
-                Debug.Log("Not Enough Money");
-                
-                return;
-            }
     }
 
     public void CancelBuild()

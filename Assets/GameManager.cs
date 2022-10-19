@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         GameIsOver = true;
         Game_Over_UI.SetActive(true);
         Spawner_Manager.RestartLevel();
+        SceneManager.RoundOffSet = 1;
     }
     
     public void WinGame()
@@ -47,5 +48,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("WIN GAME");
         Game_Win = true;
         Game_Win_UI.SetActive(true);
+        SceneManager.RoundOffSet = 1;
     }
 }

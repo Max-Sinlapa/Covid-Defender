@@ -12,7 +12,6 @@ using Random = UnityEngine.Random;
 public class WaveSpawner : MonoBehaviour
 {
     public TextMeshProUGUI waveCountdownText;
-    public PlayerStats playerstat;
     public Transform spawnPoint;
     
     public List<Wave_Object> waves;
@@ -104,7 +103,6 @@ public class WaveSpawner : MonoBehaviour
             AllEnemyInWave += waves[CurrentWave].m_Enemy[a].count;
         }
         Debug.Log("WAVE IN LEVEL = " + waves.Count);
-        
         Debug.Log("waveIndex = " + waveIndex);
         Debug.Log("CurrentWave = " + CurrentWave);
         Debug.Log("AllEnemyInWave = " + AllEnemyInWave);

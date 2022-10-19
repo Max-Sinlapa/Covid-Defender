@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5658733334090610456}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.138765, y: 3.99, z: 1.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 400}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_AmmoSpeed: 20
   m_CoolDownToLuanch: 2
   m_CurrentCoolDown: 0
+  Tower_3_Bullet_Travel_Way: {fileID: 0}
 --- !u!1 &5764092204498371209
 GameObject:
   m_ObjectHideFlags: 0
