@@ -71,14 +71,19 @@ public class Selected_Mode : MonoBehaviour
                     Debug.Log("Not Enough Money");
                     return;
                 }
+            
+            
             //----------------------------------------------------------------
             Instantiate(Current_Selected, buildPOS , Current_Selected.transform.rotation);
-
+            //----------------------------------------------------------------
+            
+            
             ///////////////// Buy_Tower
             if (Current_Selected.CompareTag("Tower_1"))
             {
                 money.DecreaseMoney(Tower_1_Prize);
                 CancelBuild();
+                //Debug.Log("BUY");
             }
 
             if (Current_Selected.CompareTag("Tower_2"))
@@ -100,6 +105,7 @@ public class Selected_Mode : MonoBehaviour
     {
         Destroy(Current_Selected);
         Current_Selected = null;
+        //Debug.Log("Cancel");
     }
 
     public void SelectedTower_1(GameObject turrent)

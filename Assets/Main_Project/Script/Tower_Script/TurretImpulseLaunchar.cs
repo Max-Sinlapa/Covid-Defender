@@ -8,19 +8,21 @@ using Object = System.Object;
 
 public class TurretImpulseLaunchar : MonoBehaviour
 {
-    [Header("Main SetUp")]    
-    [SerializeField] protected Transform m_TurretLaunchPosition;
+    [Header("Main SetUp")] [SerializeField]
+    protected Transform m_TurretLaunchPosition;
+
     [SerializeField] public Transform PartToRotate;
     [SerializeField] protected GameObject m_MissilePrefab;
-    
-    [Header("Turrent SetUp")]
-    [SerializeField] public float m_Radius;
-    
-    [Header("FirRate SetUp")]
-    [SerializeField] protected float m_AmmoSpeed = 20;
-    [SerializeField] public float m_CoolDownToLuanch ;
+
+    [Header("Turrent SetUp")] [SerializeField]
+    public float m_Radius;
+
+    [Header("FirRate SetUp")] [SerializeField]
+    protected float m_AmmoSpeed = 20;
+
+    [SerializeField] public float m_CoolDownToLuanch;
     [SerializeField] protected float m_CurrentCoolDown = 0;
-    
+
     /*
     [Header("LineRender SetUp")]
     [SerializeField] protected bool m_IsDrawGizmos = true;
@@ -31,6 +33,7 @@ public class TurretImpulseLaunchar : MonoBehaviour
 
     private Transform target;
     public Transform Tower_3_Bullet_Travel_Way;
+
     void Start()
     {
         /*
@@ -42,7 +45,7 @@ public class TurretImpulseLaunchar : MonoBehaviour
         m_LineRenderer.endWidth = 0;
         m_LineRenderer.enabled = false;
         */
-        
+
     }
 
     private void Update()
@@ -51,33 +54,24 @@ public class TurretImpulseLaunchar : MonoBehaviour
         m_CurrentCoolDown -= Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //m_LineRenderer.enabled = true;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        
-    }
-    
     private void OnTriggerStay(Collider other)
     {
-       
+
         if (other.CompareTag("Enemy"))
         {
             target = other.transform;
             //Laser aiming at player
             //m_LineRenderer.SetPosition(0,m_TurretLaunchPosition.position);
             //m_LineRenderer.SetPosition(1,other.transform.position);
-            
+
             RatateGun(other);
-            if (m_CurrentCoolDown <= 0 )
+            if (m_CurrentCoolDown <= 0)
             {
                 m_CurrentCoolDown = m_CoolDownToLuanch;
                 LaunchBall(other.transform.position);
             }
         }
-        
+
     }
 
     private void RatateGun(Collider other)
@@ -89,10 +83,10 @@ public class TurretImpulseLaunchar : MonoBehaviour
         ///////////////////////
         ////OLD ---PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
         if (this.gameObject.CompareTag("Tower_1"))
-            PartToRotate.localEulerAngles = new Vector3(0 , 0, rotation.y);
-        if(this.gameObject.CompareTag("Tower_2"))
+            PartToRotate.localEulerAngles = new Vector3(0, 0, rotation.y);
+        if (this.gameObject.CompareTag("Tower_2"))
             PartToRotate.rotation = Quaternion.Euler(default, rotation.y, default);
-        if(this.gameObject.CompareTag("Tower_3"))
+        if (this.gameObject.CompareTag("Tower_3"))
             PartToRotate.rotation = Quaternion.Euler(-90, default, rotation.y - 80);
 
     }
@@ -105,8 +99,8 @@ public class TurretImpulseLaunchar : MonoBehaviour
 
         if (bullet != null)
         {
-            if(this.gameObject.CompareTag("Tower_3"))
-            { 
+            if (this.gameObject.CompareTag("Tower_3"))
+            {
                 bullet.Seek(Tower_3_Bullet_Travel_Way);
             }
             else
@@ -121,11 +115,11 @@ public class TurretImpulseLaunchar : MonoBehaviour
                 rb = Bullet_Go.AddComponent<Rigidbody>();
 
             Vector3 launchDirection = (targetPosition - m_TurretLaunchPosition.position).normalized;
-            
-            
+
+
             if (rb is not null)
                 rb.AddForce(launchDirection * m_AmmoSpeed, ForceMode.Impulse);
-                
+
         }
         /* [OLD Bullet Travel]
         Rigidbody rb = Bullet_Go.GetComponent<Rigidbody>();
@@ -138,16 +132,5 @@ public class TurretImpulseLaunchar : MonoBehaviour
                 rb.AddForce(launchDirection * m_AmmoSpeed, ForceMode.Impulse);
         //*/
 
-}
-    
-    private void OnDrawGizmos()
-    {
-
-        Gizmos.color = Color.green;
-        /*    
-        if(m_TurretLaunchPosition is not null)
-            Gizmos.DrawWireSphere(m_TurretLaunchPosition.position ,2.25f);
-            */
     }
-    
 }

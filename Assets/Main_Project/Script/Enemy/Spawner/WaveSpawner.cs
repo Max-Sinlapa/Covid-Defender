@@ -64,8 +64,8 @@ public class WaveSpawner : MonoBehaviour
         }
         ///Timer
         
-        waveCountdownText.text = Mathf.Floor(countdown).ToString();
-        Debug.Log("Enemy DIE In Wave = " + EnemyDieInWave);
+        waveCountdownText.text = Mathf.Floor(waveIndex + 1).ToString();
+        //Debug.Log("Enemy DIE In Wave = " + EnemyDieInWave);
         
     }
 
