@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using kantapon.GameDev3.Chapter11;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -80,6 +81,8 @@ public class Enemy : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        var sound = GetComponent<AudioSource>();
+        sound.Play();
         GetKillByTower_Event.Invoke();
         Destroy(this.gameObject);
     }

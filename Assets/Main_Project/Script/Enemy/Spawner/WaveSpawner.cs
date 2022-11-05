@@ -47,11 +47,17 @@ public class WaveSpawner : MonoBehaviour
     {
         if (LevelStart == false)
         {
-            Finishwave.SetActive(true);
+            var animator = Finishwave.GetComponent<Animator>();
+            var CanvasG = Finishwave.GetComponent<CanvasGroup>();
+            animator.enabled = true;
+            CanvasG.alpha = 0;
         }
         else
         {
-            Finishwave.SetActive(false);
+            var animator = Finishwave.GetComponent<Animator>();
+            var CanvasG = Finishwave.GetComponent<CanvasGroup>();
+            animator.enabled = false;
+            CanvasG.alpha = 1;
         }
         
 

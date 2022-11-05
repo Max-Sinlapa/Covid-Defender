@@ -22,7 +22,7 @@ public class Money_System : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyCountText.text = "$ : " + Mathf.Floor(m_CurrentMoney);
+        moneyCountText.text = "" + Mathf.Floor(m_CurrentMoney);
     }
 
     public static void AddMoney(int Amount_Earn_Money)
