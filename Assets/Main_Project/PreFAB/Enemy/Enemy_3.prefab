@@ -461,10 +461,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Start_HealthPoint: 500
   Current_HealthPoint: 0
-  speed: 5
+  speed: 7
   Slow_persentage: 0.5
-  moneyDrop: 0
-  DamageToBase: 20
+  moneyDrop: 30
+  DamageToBase: 45
   GetKillByTower_Event:
     m_PersistentCalls:
       m_Calls: []

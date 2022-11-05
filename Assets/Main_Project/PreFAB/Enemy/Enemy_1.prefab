@@ -307,12 +307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031a0dcfc3ae55d43911b309661f6ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Start_HealthPoint: 100
+  Start_HealthPoint: 130
   Current_HealthPoint: 0
-  speed: 7
+  speed: 9.8
   Slow_persentage: 0.5
-  moneyDrop: 0
-  DamageToBase: 100
+  moneyDrop: 4
+  DamageToBase: 30
   GetKillByTower_Event:
     m_PersistentCalls:
       m_Calls: []

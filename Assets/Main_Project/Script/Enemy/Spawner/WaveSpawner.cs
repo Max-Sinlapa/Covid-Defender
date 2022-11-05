@@ -12,8 +12,8 @@ using Random = UnityEngine.Random;
 public class WaveSpawner : MonoBehaviour
 {
     public TextMeshProUGUI waveCountdownText;
+    public GameObject Finishwave;
     public Transform spawnPoint;
-    
     public List<Wave_Object> waves;
     
     private int time_Spawn_Enemy;
@@ -45,13 +45,15 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(2) && !LevelStart)
+        if (LevelStart == false)
         {
-            waveIndex++;
-            StartWave(waveIndex);
-            LevelStart = true;
+            Finishwave.SetActive(true);
         }
-        ////-----------------------------------------------------------------------
+        else
+        {
+            Finishwave.SetActive(false);
+        }
+        
 
         ///Timer
         if(LevelStart)
@@ -75,8 +77,8 @@ public class WaveSpawner : MonoBehaviour
         PlayerStats.Rounds = -1;
         Time.timeScale = 1;
         waveIndex = PlayerStats.Rounds;
-        var moneySystem = GetComponent<Money_System>();
-        moneySystem.m_CurrentMoney = moneySystem.m_StartMoney;
+        //var moneySystem = GetComponent<Money_System>();
+        Money_System.m_CurrentMoney = Money_System.m_StartMoney;
         var m_Base = GetComponent<MainBase>();
         m_Base.RestartMainBase();
         LevelStart = false;
@@ -84,6 +86,7 @@ public class WaveSpawner : MonoBehaviour
 
     void StartWave(int CurrentWave)
     {
+        AllEnemyInWave = 0;
         countdown = 0;
         PlayerStats.Rounds++;
         /////Check EnemyGameObject
@@ -115,7 +118,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (EnemyAlradySpawnInWave >= AllEnemyInWave && EnemyDieInWave == AllEnemyInWave)
         {
-            Debug.Log("Wave Done "+ EnemyAlradySpawnInWave);
+            //Debug.Log("Wave Done "+ EnemyAlradySpawnInWave);
             LevelStart = false;
             return;
         }
@@ -144,7 +147,7 @@ public class WaveSpawner : MonoBehaviour
         ///////////ADD Money When Enemy Die
         var enemy = enemyObj.GetComponent<Enemy>();
         var money = enemy.moneyDrop;
-        enemy.GetKillByTower_Event.AddListener(()=> moneySystem.AddMoney(money));
+        enemy.GetKillByTower_Event.AddListener(()=> Money_System.AddMoney(money));
         enemy.GetKillByTower_Event.AddListener(()=> this.EnemyDieInWave++);
         /////////ADD Money When Enemy Die
 
@@ -158,8 +161,21 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log( "EnemyType = " + enemy_PreFab + " /// EnemyCount = " + waves[CurrentWave].m_Enemy[EnemyType].count);
         Debug.Log("EnemyAlradySpawnInWave = "+ EnemyAlradySpawnInWave);
     }
-    
-    
+
+    public void StartNextWave()
+    {
+        if(LevelStart == false)
+        {
+            waveIndex++;
+            StartWave(waveIndex);
+            LevelStart = true;
+        }
+        else
+        {
+            return;
+        }
+        
+    }
     
 }
 
