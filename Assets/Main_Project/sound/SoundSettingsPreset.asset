@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioMixer: {fileID: 24100000, guid: 32ebc0d59f6a4434e8ea9f6d9345a2e2, type: 2}
   MasterVolumeName: MasterVolume
-  MasterVolume: -3.1249988
+  MasterVolume: -6.249999
+  MusicVolumeName: MusicVolume
+  MusicVolume: 0
+  MasterSFXVolumeName: MasterSFXVolume
+  MasterSFXVolume: 0
+  SFXVolumeName: SFXVolume
+  SFXVolume: 0
+  UIVolumeName: UIVolume
+  UIVolume: 0
