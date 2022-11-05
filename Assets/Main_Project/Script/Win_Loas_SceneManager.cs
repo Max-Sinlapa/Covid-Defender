@@ -16,7 +16,7 @@ public class Win_Loas_SceneManager : MonoBehaviour
     void Update()
     {
         Current_Round = PlayerStats.Rounds + RoundOffSet;
-        Debug.Log("Current_Round = " + Current_Round);
+        //Debug.Log("Current_Round = " + Current_Round);
         roundText.text = Current_Round.ToString();
     }
 

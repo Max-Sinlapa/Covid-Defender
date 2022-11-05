@@ -236,7 +236,7 @@ MonoBehaviour:
   m_MissilePrefab: {fileID: 6044445112466049115, guid: 82b8f57609f7f154cac53ebd927e8a39, type: 3}
   m_Radius: 2
   m_AmmoSpeed: 20
-  m_CoolDownToLuanch: 3.5
+  m_CoolDownToLuanch: 3
   m_CurrentCoolDown: 0
   Tower_3_Bullet_Travel_Way: {fileID: 6737128635929064613}
 --- !u!1 &3125808997699693485

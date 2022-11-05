@@ -463,7 +463,7 @@ MonoBehaviour:
   Current_HealthPoint: 0
   speed: 7
   Slow_persentage: 0.5
-  moneyDrop: 30
+  moneyDrop: 15
   DamageToBase: 45
   GetKillByTower_Event:
     m_PersistentCalls:

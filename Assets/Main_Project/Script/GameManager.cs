@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     {
         GameIsOver = true;
         Game_Over_UI.SetActive(true);
-        Spawner_Manager.RestartLevel();
-        Win_Loas_SceneManager.RoundOffSet = 1;
+        //Spawner_Manager.RestartLevel();
+        //Win_Loas_SceneManager.RoundOffSet = 1;
     }
     
     public void WinGame()

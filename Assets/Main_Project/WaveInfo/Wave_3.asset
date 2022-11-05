@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Enemy:
   - enemy: {fileID: 6119837263651161220, guid: bcd285e1b2ee3c94da20d2b0a5c2460e, type: 3}
-    count: 65
+    count: 70
     SpawnRate: 1
   - enemy: {fileID: 9218095922246298735, guid: 93844e4f21b94ed47a5e8e30779eb3e1, type: 3}
-    count: 13
-    SpawnRate: 5
+    count: 23
+    SpawnRate: 3
   - enemy: {fileID: 6374555169459676322, guid: 847d1d5fc4d392f4ea7a8589626e838a, type: 3}
-    count: 2
-    SpawnRate: 30
+    count: 3
+    SpawnRate: 20
+  - enemy: {fileID: 9218095922246298735, guid: 93844e4f21b94ed47a5e8e30779eb3e1, type: 3}
+    count: 10
+    SpawnRate: 7

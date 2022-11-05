@@ -18,7 +18,7 @@ MonoBehaviour:
     SpawnRate: 1
   - enemy: {fileID: 9218095922246298735, guid: 93844e4f21b94ed47a5e8e30779eb3e1, type: 3}
     count: 33
-    SpawnRate: 3
+    SpawnRate: 2
   - enemy: {fileID: 6374555169459676322, guid: 847d1d5fc4d392f4ea7a8589626e838a, type: 3}
-    count: 5
-    SpawnRate: 20
+    count: 14
+    SpawnRate: 7
