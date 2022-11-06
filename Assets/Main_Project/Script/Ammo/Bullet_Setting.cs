@@ -59,7 +59,7 @@ public class Bullet_Setting : MonoBehaviour
         transform.Translate(NoTargetDirection.normalized * distanceThisFrame, Space.World);
         
         
-        if (this.transform.position.y > 4 || this.transform.position.y < 3)
+        if (this.transform.position.y > 4 || this.transform.position.y < 2)
         {
             if (this.transform.position.y > 4)
             {
@@ -67,10 +67,10 @@ public class Bullet_Setting : MonoBehaviour
                 transformLocalPosition.y -= 0.01f;
                 transform.localPosition = transformLocalPosition;
             }
-            if (this.transform.position.y < 3)
+            if (this.transform.position.y < 2)
             {
                 var transformLocalPosition = transform.localPosition;
-                transformLocalPosition.y += 0.03f;
+                transformLocalPosition.y += 0.1f;
                 transform.localPosition = transformLocalPosition;
             }
         }

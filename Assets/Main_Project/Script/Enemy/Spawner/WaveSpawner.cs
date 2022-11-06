@@ -59,13 +59,18 @@ public class WaveSpawner : MonoBehaviour
             animator.enabled = false;
             CanvasG.alpha = 1;
         }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            StartNextWave();
+        }
         
 
         ///Timer
         if(LevelStart)
             timeTick++;
         
-        if (timeTick % 600 == 0)
+        if (timeTick % 200 == 0)
         {
             countdown += 1;
             SpawnWave(waveIndex);
@@ -172,6 +177,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if(LevelStart == false)
         {
+            Debug.Log("START");
             waveIndex++;
             StartWave(waveIndex);
             LevelStart = true;
