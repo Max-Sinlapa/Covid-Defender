@@ -10,6 +10,7 @@ public class MainBase : MonoBehaviour
     public int Start_HealthBase;
     public int Current_HealthBase;
     public Slider m_SliderTimer;
+    public UnityEvent m_BaseHitEvent = new();
     public UnityEvent m_DestroyBaseEvent = new();
     public PlayerStats playerStat;
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class MainBase : MonoBehaviour
     public void DecressHealth(int decressAmount)
     { 
         Current_HealthBase -= decressAmount;
+        m_BaseHitEvent.Invoke();
     }
     
 

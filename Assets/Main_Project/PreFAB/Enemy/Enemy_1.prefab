@@ -314,7 +314,7 @@ MonoBehaviour:
   speed: 9.8
   Slow_persentage: 0.5
   moneyDrop: 4
-  DamageToBase: 30
+  DamageToBase: 20
   GetKillByTower_Event:
     m_PersistentCalls:
       m_Calls:

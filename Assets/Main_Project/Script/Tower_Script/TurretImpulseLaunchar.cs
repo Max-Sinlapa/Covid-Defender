@@ -121,6 +121,9 @@ public class TurretImpulseLaunchar : MonoBehaviour
                 rb.AddForce(launchDirection * m_AmmoSpeed, ForceMode.Impulse);
 
         }
+        
+        var audiosource = GetComponent <AudioSource >();
+        audiosource.Play();
         /* [OLD Bullet Travel]
         Rigidbody rb = Bullet_Go.GetComponent<Rigidbody>();
         if (rb is null)

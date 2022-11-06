@@ -15,6 +15,7 @@ public class Selected_Mode : MonoBehaviour
     [Header("Event")]
     [SerializeField] protected UnityEvent m_Left_Mouse_Click = new();
     [SerializeField] protected UnityEvent m_Right_Mouse_Click = new();
+    [SerializeField] protected UnityEvent m_Buy_Tower = new();
     [SerializeField] protected UnityEvent m_Can_Not_Buy = new();
 
     void Start()
@@ -55,6 +56,7 @@ public class Selected_Mode : MonoBehaviour
                 if (Money_System.m_CurrentMoney < Tower_1_Prize)
                 {
                     Debug.Log("Not Enough Money");
+                    m_Can_Not_Buy.Invoke();
                     return;
                 }
             
@@ -62,13 +64,15 @@ public class Selected_Mode : MonoBehaviour
                 if (Money_System.m_CurrentMoney < Tower_2_Prize)
                 {
                     Debug.Log("Not Enough Money");
+                    m_Can_Not_Buy.Invoke();
                     return;
                 }
             
             if (Current_Selected.CompareTag("Tower_3"))
-                if (Money_System.m_CurrentMoney < Tower_2_Prize)
+                if (Money_System.m_CurrentMoney < Tower_3_Prize)
                 {
                     Debug.Log("Not Enough Money");
+                    m_Can_Not_Buy.Invoke();
                     return;
                 }
             
@@ -82,6 +86,7 @@ public class Selected_Mode : MonoBehaviour
             if (Current_Selected.CompareTag("Tower_1"))
             {
                 Money_System.DecreaseMoney(Tower_1_Prize);
+                m_Buy_Tower.Invoke();
                 CancelBuild();
                 //Debug.Log("BUY");
                 
@@ -90,12 +95,14 @@ public class Selected_Mode : MonoBehaviour
             else if (Current_Selected.CompareTag("Tower_2"))
             {
                 Money_System.DecreaseMoney(Tower_2_Prize);
+                m_Buy_Tower.Invoke();
                 CancelBuild();
             }
 
             else if (Current_Selected.CompareTag("Tower_3"))
             {
                 Money_System.DecreaseMoney(Tower_3_Prize);
+                m_Buy_Tower.Invoke();
                 CancelBuild();
             }
             ///////////////// Buy_Tower
